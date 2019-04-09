@@ -1,4 +1,4 @@
-# 
+#
 msgid ""
 msgstr "Content-Type: text/plain; charset=utf-8\n"
 
@@ -10,9 +10,9 @@ msgctxt "field:purchase.product_supplier,minimum_quantity:"
 msgid "Minimum Quantity"
 msgstr "Quantitat mínima"
 
-msgctxt "field:purchase.request,currency:"
-msgid "Currency"
-msgstr "Moneda"
+msgctxt "field:purchase.product_supplier,purchase_uom_digits:"
+msgid "Purchase UOM Digits"
+msgstr "Dígits UdM de compra"
 
 msgctxt "field:purchase.request,minimum_quantity:"
 msgid "Minimum Quantity"
