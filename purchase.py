@@ -26,19 +26,9 @@ class ProductSupplier(metaclass=PoolMeta):
 
 class PurchaseRequest(metaclass=PoolMeta):
     __name__ = 'purchase.request'
-    uom_digits = fields.Function(fields.Integer('UOM Digits'),
-        'on_change_with_uom_digits')
     minimum_quantity = fields.Function(fields.Float('Minimum Quantity',
             digits=(16, Eval('uom_digits', 2)), depends=['uom_digits']),
         'on_change_with_minimum_quantity', searcher='search_minimum_quantity')
-
-    # TODO This can be removed when uom_digits it's introduced on base module.
-    # See: https://bugs.tryton.org/issue4282 (version 3.6)
-    @fields.depends('uom')
-    def on_change_with_uom_digits(self, name=None):
-        if self.uom:
-            return self.uom.digits
-        return 2
 
     @fields.depends('supplier', 'product', 'uom')
     def on_change_with_minimum_quantity(self, name=None):
