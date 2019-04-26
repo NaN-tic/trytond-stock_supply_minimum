@@ -130,8 +130,12 @@ There is now a draft purchase request::
     >>> pr, = PurchaseRequest.find([('state', '=', 'draft')])
     >>> pr.product == product
     True
+    >>> pr.party == supplier
+    True
     >>> pr.quantity
     3.0
+    >>> pr.minimum_quantity
+    5.0
 
 Create the purchase and check minimal quantity::
 
