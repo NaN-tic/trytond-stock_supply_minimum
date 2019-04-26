@@ -73,7 +73,7 @@ class CreatePurchase(metaclass=PoolMeta):
         line = super(CreatePurchase, cls).compute_purchase_line(key, requests,
             purchase)
         line.quantity = max([line.quantity] + [x.minimum_quantity for x in
-                requests])
+                requests if x.minimum_quantity])
         return line
 
 
