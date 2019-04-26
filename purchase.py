@@ -35,7 +35,7 @@ class PurchaseRequest(metaclass=PoolMeta):
         Uom = Pool().get('product.uom')
         if not self.product:
             return
-        for product_supplier in self.product.product_suppliers:
+        for product_supplier in self.product.product_suppliers_used():
             if product_supplier.party == self.party:
                 return Uom.compute_qty(self.product.purchase_uom,
                     product_supplier.minimum_quantity, self.uom)
