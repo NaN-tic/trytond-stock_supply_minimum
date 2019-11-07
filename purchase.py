@@ -30,7 +30,7 @@ class PurchaseRequest(metaclass=PoolMeta):
             digits=(16, Eval('uom_digits', 2)), depends=['uom_digits']),
         'on_change_with_minimum_quantity', searcher='search_minimum_quantity')
 
-    @fields.depends('supplier', 'product', 'uom')
+    @fields.depends('product', 'uom')
     def on_change_with_minimum_quantity(self, name=None):
         Uom = Pool().get('product.uom')
         if not self.product:
