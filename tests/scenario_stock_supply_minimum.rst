@@ -45,7 +45,6 @@ Create parties::
     >>> supplier = Party(name='Supplier')
     >>> supplier.save()
 
-
 Create account category::
 
   >>> ProductCategory = Model.get('product.category')
@@ -54,7 +53,6 @@ Create account category::
   >>> account_category.account_expense = expense
   >>> account_category.account_revenue = revenue
   >>> account_category.save()
-
 
 Create product::
 
@@ -192,3 +190,19 @@ Create the purchase and check minimal quantity::
     >>> line, = purchase.lines
     >>> line.quantity
     7.0
+
+Check domain validate error and allow return quantities::
+
+    >>> purchase = Purchase()
+    >>> purchase.party = supplier
+    >>> line = purchase.lines.new()
+    >>> line.product = product
+    >>> line.minimum_quantity == 5
+    True
+    >>> line.quantity = 4
+    >>> purchase.save() # doctest: +IGNORE_EXCEPTION_DETAIL
+    Traceback (most recent call last):
+        ...
+    DomainValidationError: ...
+    >>> line.quantity = -4
+    >>> purchase.save()
