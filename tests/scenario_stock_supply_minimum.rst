@@ -13,7 +13,6 @@ Imports::
     ...     get_company
     >>> from trytond.modules.account.tests.tools import (create_chart,
     ...     get_accounts)
-    >>> today = datetime.date.today()
 
 Install stock_supply_minimum::
 
@@ -98,8 +97,8 @@ Create a need for missing product::
 
     >>> ShipmentOut = Model.get('stock.shipment.out')
     >>> shipment_out = ShipmentOut()
-    >>> shipment_out.planned_date = today
-    >>> shipment_out.effective_date = today
+    >>> shipment_out.planned_date = datetime.date.today()
+    >>> shipment_out.effective_date = datetime.date.today()
     >>> shipment_out.customer = customer
     >>> shipment_out.warehouse = warehouse_loc
     >>> shipment_out.company = company
@@ -152,8 +151,8 @@ Create new need for missing product::
 
     >>> ShipmentOut = Model.get('stock.shipment.out')
     >>> shipment_out = ShipmentOut()
-    >>> shipment_out.planned_date = today
-    >>> shipment_out.effective_date = today
+    >>> shipment_out.planned_date = datetime.date.today()
+    >>> shipment_out.effective_date = datetime.date.today()
     >>> shipment_out.customer = customer
     >>> shipment_out.warehouse = warehouse_loc
     >>> shipment_out.company = company
