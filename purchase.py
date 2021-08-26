@@ -81,12 +81,9 @@ class PurchaseLine(metaclass=PoolMeta):
     __name__ = 'purchase.line'
 
     minimum_quantity = fields.Function(fields.Float('Minimum Quantity',
-            digits=(16, Eval('unit_digits', 2)),
-            states={
-                'invisible': ~Bool(Eval('minimum_quantity')),
-                },
-            depends=['unit_digits'], help='The quantity must be greater or '
-            'equal than minimum quantity'),
+        digits='unit', states={
+            'invisible': ~Bool(Eval('minimum_quantity')),
+        }, help='The quantity must be greater or equal than minimum quantity'),
         'on_change_with_minimum_quantity')
 
     @classmethod
