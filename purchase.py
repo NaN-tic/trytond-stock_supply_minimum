@@ -74,6 +74,7 @@ class CreatePurchase(metaclass=PoolMeta):
             purchase)
         line.quantity = max([line.quantity] + [x.minimum_quantity for x in
                 requests if x.minimum_quantity])
+        line.on_change_quantity()
         return line
 
 
