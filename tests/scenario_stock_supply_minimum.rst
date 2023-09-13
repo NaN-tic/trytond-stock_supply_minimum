@@ -104,7 +104,7 @@ Create a need for missing product::
     >>> shipment_out.company = company
     >>> move = shipment_out.outgoing_moves.new()
     >>> move.product = product
-    >>> move.uom = unit
+    >>> move.unit = unit
     >>> move.quantity = 3
     >>> move.from_location = output_loc
     >>> move.to_location = customer_loc
@@ -158,7 +158,7 @@ Create new need for missing product::
     >>> shipment_out.company = company
     >>> move = shipment_out.outgoing_moves.new()
     >>> move.product = product
-    >>> move.uom = unit
+    >>> move.unit = unit
     >>> move.quantity = 7
     >>> move.from_location = output_loc
     >>> move.to_location = customer_loc

@@ -27,10 +27,10 @@ class ProductSupplier(metaclass=PoolMeta):
 class PurchaseRequest(metaclass=PoolMeta):
     __name__ = 'purchase.request'
     minimum_quantity = fields.Function(fields.Float('Minimum Quantity',
-            digits=(16, Eval('uom_digits', 2)), depends=['uom_digits']),
-        'on_change_with_minimum_quantity', searcher='search_minimum_quantity')
+            digits='unit'), 'on_change_with_minimum_quantity',
+            searcher='search_minimum_quantity')
 
-    @fields.depends('product', 'uom')
+    @fields.depends('product', 'unit')
     def on_change_with_minimum_quantity(self, name=None):
         Uom = Pool().get('product.uom')
         if not self.product:
@@ -38,7 +38,7 @@ class PurchaseRequest(metaclass=PoolMeta):
         for product_supplier in self.product.product_suppliers_used():
             if product_supplier.party == self.party:
                 return Uom.compute_qty(self.product.purchase_uom,
-                    product_supplier.minimum_quantity, self.uom)
+                    product_supplier.minimum_quantity, self.unit)
 
     @classmethod
     def search_minimum_quantity(cls, name, clause):
