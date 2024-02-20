@@ -99,7 +99,7 @@ class PurchaseLine(metaclass=PoolMeta):
     @fields.depends('product', 'purchase', '_parent_purchase.party', 'unit')
     def on_change_with_minimum_quantity(self, name=None):
         Uom = Pool().get('product.uom')
-        if not self.product or not self.purchase.party:
+        if not self.product or not self.purchase or not self.purchase.party:
             return
 
         product_suppliers = list(self.product.product_suppliers_used(
