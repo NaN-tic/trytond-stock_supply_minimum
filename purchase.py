@@ -90,11 +90,11 @@ class PurchaseLine(metaclass=PoolMeta):
     @classmethod
     def __setup__(cls):
         super(PurchaseLine, cls).__setup__()
-        minimum_domain = If(Bool(Eval('minimum_quantity', 0)),
+        minimum_domain = If( Eval('purchase_state').in_(['draft', 'quotation']) & Bool(Eval('minimum_quantity', 0)),
             ('OR', ('quantity', '>=', Eval('minimum_quantity', 0)), ('quantity', '<', 0)), ())
-        if not 'minimum_quantity' in cls.quantity.depends:
-            cls.quantity.domain.append(minimum_domain)
-            cls.quantity.depends.add('minimum_quantity')
+        cls.quantity.domain.append(minimum_domain)
+        cls.quantity.depends.add('minimum_quantity')
+        cls.quantity.depends.add('purchase_state')
 
     @fields.depends('product', 'purchase', '_parent_purchase.party', 'unit')
     def on_change_with_minimum_quantity(self, name=None):
