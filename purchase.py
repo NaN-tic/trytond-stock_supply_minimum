@@ -4,9 +4,6 @@ from trytond.model import fields
 from trytond.pool import Pool, PoolMeta
 from trytond.pyson import If, Bool, Eval
 
-__all__ = ['ProductSupplier', 'PurchaseRequest', 'CreatePurchase',
-    'PurchaseLine']
-
 
 class ProductSupplier(metaclass=PoolMeta):
     __name__ = 'purchase.product_supplier'
@@ -30,10 +27,10 @@ class PurchaseRequest(metaclass=PoolMeta):
             digits='unit'), 'on_change_with_minimum_quantity',
             searcher='search_minimum_quantity')
 
-    @fields.depends('product', 'unit')
+    @fields.depends('product', 'unit', 'party')
     def on_change_with_minimum_quantity(self, name=None):
         Uom = Pool().get('product.uom')
-        if not self.product:
+        if not self.product or not self.unit:
             return
         for product_supplier in self.product.product_suppliers_used():
             if product_supplier.party == self.party:
