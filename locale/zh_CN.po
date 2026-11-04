@@ -1,0 +1,32 @@
+#
+msgid ""
+msgstr ""
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:purchase.line,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "最小数量"
+
+msgctxt "field:purchase.product_supplier,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "最小数量"
+
+msgctxt "field:purchase.product_supplier,purchase_uom_digits:"
+msgid "Purchase UOM Digits"
+msgstr "采购计量单位小数位数"
+
+msgctxt "field:purchase.request,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "最小数量"
+
+msgctxt "help:purchase.line,minimum_quantity:"
+msgid "The quantity must be greater or equal than minimum quantity"
+msgstr "数量必须大于或等于最小数量"
+
+msgctxt "view:purchase.line:"
+msgid "The quantity must be greater or equal than minimum quantity:"
+msgstr "数量必须大于或等于最小数量："
