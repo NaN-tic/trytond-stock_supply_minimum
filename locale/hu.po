@@ -1,0 +1,32 @@
+#
+msgid ""
+msgstr ""
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "field:purchase.line,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "Minimális mennyiség"
+
+msgctxt "field:purchase.product_supplier,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "Minimális mennyiség"
+
+msgctxt "field:purchase.product_supplier,purchase_uom_digits:"
+msgid "Purchase UOM Digits"
+msgstr "Beszerzési mértékegység tizedesjegyei"
+
+msgctxt "field:purchase.request,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "Minimális mennyiség"
+
+msgctxt "help:purchase.line,minimum_quantity:"
+msgid "The quantity must be greater or equal than minimum quantity"
+msgstr "A mennyiségnek legalább a minimális mennyiségnek kell lennie"
+
+msgctxt "view:purchase.line:"
+msgid "The quantity must be greater or equal than minimum quantity:"
+msgstr "A mennyiségnek legalább a minimális mennyiségnek kell lennie:"
