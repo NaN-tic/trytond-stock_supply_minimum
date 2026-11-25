@@ -1,0 +1,32 @@
+#
+msgid ""
+msgstr ""
+"Language: km\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgctxt "field:purchase.line,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "បរិមាណអប្បបរមា"
+
+msgctxt "field:purchase.product_supplier,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "បរិមាណអប្បបរមា"
+
+msgctxt "field:purchase.product_supplier,purchase_uom_digits:"
+msgid "Purchase UOM Digits"
+msgstr "ចំនួនខ្ទង់នៃឯកតារង្វាស់ទិញ"
+
+msgctxt "field:purchase.request,minimum_quantity:"
+msgid "Minimum Quantity"
+msgstr "បរិមាណអប្បបរមា"
+
+msgctxt "help:purchase.line,minimum_quantity:"
+msgid "The quantity must be greater or equal than minimum quantity"
+msgstr "បរិមាណត្រូវធំជាង ឬស្មើនឹងបរិមាណអប្បបរមា"
+
+msgctxt "view:purchase.line:"
+msgid "The quantity must be greater or equal than minimum quantity:"
+msgstr "បរិមាណត្រូវធំជាង ឬស្មើនឹងបរិមាណអប្បបរមា៖"
